@@ -24,7 +24,7 @@ class UserUpdateValuesKeyboard:
                 keyboard = ReplyKeyboardMarkup(resize_keyboard=True, row_width=1).add(KeyboardButton(text="Отправить геолокацию", request_location=True))
                 if self.value:
                     keyboard.add(KeyboardButton(text=self.value))
-                keyboard.add(KeyboardButton(text="Отмена"))
+                    keyboard.add(KeyboardButton(text="Отмена"))
                 return keyboard
             keyboard =  ReplyKeyboardMarkup(resize_keyboard=True, row_width=1).add(KeyboardButton(text=self.value), KeyboardButton(text="Отмена"))
             if self.set_null:
