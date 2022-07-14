@@ -74,7 +74,7 @@ def sort_distance_cities(cities, user_city):
     if len(cities) == 0:
         return False
     elif len(cities) == 1:
-        return cities[0]
+        return [{'id': cities[0]['id'], 'name': cities[0]['name'], 'coordinates': cities[0]['coordinates']}]
         
     result = []
     for city in cities:
