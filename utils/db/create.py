@@ -52,8 +52,8 @@ async def create_user(telegram_id, username, name, age, sex, find_sex, city_id, 
 
 async def create_city(name, coordinates):
     conn = await get_conn()
-    await conn.close()
     await conn.execute('INSERT INTO cities(name, coordinates) VALUES($1, $2)', name, coordinates)
+    await conn.close()
 
 async def create_like(sender, recipient, description=None):
     conn = await get_conn()
