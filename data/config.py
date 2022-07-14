@@ -3,7 +3,7 @@ from os import getenv
 
 load_dotenv()
 BOT_TOKEN = getenv("BOT_TOKEN")
-ADMIN_ID = getenv("ADMIN_ID")
+ADMIN_ID = int(getenv("ADMIN_ID"))
 
 DB_HOST = getenv("DB_HOST")
 DB_PORT = getenv("DB_PORT")
