@@ -12,16 +12,16 @@ async def on_startup(dp):
     setup_filters(dp)
     await create_tables()
     await bot.send_message(ADMIN_ID, "Bot started working")
-    await bot.set_webhook(WEBHOOK_URL)
+    # await bot.set_webhook(WEBHOOK_URL)
 
 
 if __name__ == '__main__':
-    # executor.start_polling(dp, on_startup=on_startup)
-    executor.start_webhook(
-        dispatcher=dp,
-        webhook_path=WEBHOOK_PATH,
-        skip_updates=True,
-        on_startup=on_startup,
-        host=WEBAPP_HOST,
-        port=WEBAPP_PORT
-    )
+    executor.start_polling(dp, on_startup=on_startup)
+    # executor.start_webhook(
+    #     dispatcher=dp,
+    #     webhook_path=WEBHOOK_PATH,
+    #     skip_updates=True,
+    #     on_startup=on_startup,
+    #     host=WEBAPP_HOST,
+    #     port=WEBAPP_PORT
+    # )
