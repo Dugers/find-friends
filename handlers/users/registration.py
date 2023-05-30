@@ -173,7 +173,7 @@ async def set_description(message: Message, state: FSMContext):
         photo_id = data['photo_id']
         video_id = data['video_id']
     await create_user(telegram_id, username, name, age, sex, find_sex, city_id, photo_id, video_id, description)
-    await message.answer("Твоя анкета успешно создана", reply_markup=ReplyKeyboardRemove())
+    await message.answer("Твоя анкета успешно создана", reply_markup=main_menu_keboard)
     await state.finish()
     user_info = {'telegram_id': telegram_id, 'username': username, 'name': name, 'age': age, 'sex': sex, 'find_sex': find_sex, 'city_id': city_id, 'photo_id': photo_id, 'video_id': video_id, 'description': description, 'checked': None, 'check_time': None}
     await user_profile(message, user_info)
