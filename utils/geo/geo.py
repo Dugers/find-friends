@@ -1,14 +1,13 @@
 from geopy.distance import distance
 from geopy.geocoders import Nominatim, Photon
 from geopy.adapters import AioHTTPAdapter
-from fake_useragent import UserAgent
 from .funcs import get_location
 import asyncio
 
 
 async def get_geowork(coordinates=False, name=False, need_coordinates=False, need_name=False):
     await asyncio.sleep(1)
-    ua = UserAgent().random
+    ua = "Mozilla/5.0 (Linux; Android 11; SM-A105G Build/RP1A.200720.012; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/94.0.4606.71 Mobile Safari/537.36 Instagram 208.0.0.32.135 Android (30/11; 280dpi; 720x1382; samsung; SM-A105G; a10; exynos7884B; ru_RU; 323102551)"
     async with Nominatim(user_agent=ua, adapter_factory=AioHTTPAdapter) as geolocator:
         location = await get_location(geolocator, coordinates, name)
         if location:
