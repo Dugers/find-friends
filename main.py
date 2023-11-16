@@ -11,7 +11,7 @@ async def on_startup(dp):
     setup_middlewares(dp)
     setup_filters(dp)
     await create_tables()
-    await bot.send_message(ADMIN_ID, "Bot started working")
+    await bot.send_message(ADMIN_ID, "Bot started")
     await bot.set_webhook(WEBHOOK_URL)
 
 
